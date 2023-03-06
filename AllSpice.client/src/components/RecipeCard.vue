@@ -1,6 +1,4 @@
 <template>
-
-
   <div @click="setActive(recipe.id)" class="card">
     <img class="card-img-top imgSize" :src="recipe.img" alt="" srcset="">
     <div class="card-body backgroundLight">
@@ -13,8 +11,12 @@
         </p>
       </div>
       <div class="row d-flex align-items-center lowerRow">
-        <h2 class="mt-4  align-items-center">
-          <span class="minuteText mdi mdi-av-timer">{{ randomTime }} mins</span> &nbsp &nbsp &nbsp &nbsp
+        <div class="col-6">
+          <h2 class="align-items-center">
+            <span class="minuteText mdi mdi-av-timer">{{ randomTime }} mins</span>
+          </h2>
+        </div>
+        <div class="col-6 text-end">
           <span v-if="randomRating === 0">
             <span class="mdi mdi-star-outline"></span>
             <span class="mdi mdi-star-outline"></span>
@@ -57,11 +59,10 @@
             <span class="mdi mdi-star"></span>
             <span class="mdi mdi-star"></span>
           </span>
-        </h2>
+        </div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -94,7 +95,7 @@ export default {
           recipesService.getById(recipeId)
         } catch (error) {
           console.error(error)
-          // @ts-ignore 
+          // @ts-ignore
           Pop.error(('[ERROR]'), error.message)
         }
       }
@@ -125,7 +126,7 @@ export default {
 }
 
 .upperRow {
-  height: 50%
+  height: 60%
 }
 
 .lowerRow {
@@ -133,11 +134,11 @@ export default {
 }
 
 .textSize {
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding-bottom: 0px;
 }
 
 .minuteText {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 </style>

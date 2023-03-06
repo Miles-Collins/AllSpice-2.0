@@ -1,5 +1,4 @@
 <template>
-
   <div v-if="recipe" class="container-fluid">
     <div class="row">
       <div class="offset-1 col-1">
@@ -45,8 +44,8 @@
         </div>
         <!-- SECTION RATING SYSTEM/CLICK DOWN TO COMMENTS/QUICK LINK DOWN TO RECIPE  -->
         <div class="row mt-3 borderBottom">
-          <button class="col-1 mx-1 btn btn-outline">RATING</button>
-          <button class="col-1 mx-1 btn btn-outline">COMMENTS</button>
+          <button class="col-2 mx-1 btn btn-outline">RATING</button>
+          <button class="col-2 mx-1 btn btn-outline">COMMENTS</button>
           <button class="col-2 mx-1 btn btn-outline">TO RECIPE</button>
         </div>
         <div class="row my-4">
@@ -57,7 +56,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -80,7 +78,7 @@ export default {
         recipesService.getById(route.params.id)
       } catch (error) {
         console.error(error)
-        // @ts-ignore 
+        // @ts-ignore
         Pop.error(('[ERROR]'), error.message)
       }
     }

@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed-top">
+  <header>
     <Navbar />
   </header>
   <main>
@@ -28,15 +28,13 @@ export default {
   --main-height: calc(100vh - 32px - 64px);
 }
 
-
-footer {
-  display: grid;
-  place-content: center;
-  height: 32px;
+header {
+  height: 10vh;
 }
 
 body {
   background-color: #EFF9FC;
   font-family: NanumMyeongjo;
+  max-height: 100vh;
 }
 </style>

@@ -1,5 +1,4 @@
 <template>
-
   <section class="container-fluid">
     <div class="row">
       <div v-if="!activeRecipe" class="col-12 col-md-7 leftBar"
@@ -42,10 +41,11 @@
         </div>
       </div>
       <div class="col-12 col-md-5 rightBar">
-        <div class="mt-3 row d-flex justify-content-center ">
-          <div class="col-12 rightBarTitle"></div>
-          <div v-for="r in recipes" key="r.id" class="col-12 col-md-6 p-2
-    ">
+        <div class="mt-3 row d-flex justify-content-center">
+          <div class="col-8 mt-1 rightBarTitle"></div>
+        </div>
+        <div class="row">
+          <div v-for="r in recipes" key="r.id" class="col-12 col-md-6 p-2">
             <RecipeCard :recipe="r" />
           </div>
         </div>
@@ -80,7 +80,7 @@ export default {
         await recipesService.getRecipes()
       } catch (error) {
         console.error(error)
-        // @ts-ignore 
+        // @ts-ignore
         Pop.error(('[ERROR]'), error.message)
       }
     }
@@ -95,7 +95,7 @@ export default {
           router.push({ name: 'Recipe', params: { id: recipeId } })
         } catch (error) {
           console.error(error)
-          // @ts-ignore 
+          // @ts-ignore
           Pop.error(('[ERROR]'), error.message)
         }
       }
@@ -106,8 +106,8 @@ export default {
 
 <style scoped lang="scss">
 .cardSize {
-  height: 25vh;
-  width: 15vw;
+  height: 25vh !important;
+  width: 15vw !important;
 }
 
 .card {
@@ -120,7 +120,7 @@ export default {
 }
 
 .leftBarSmush {
-  height: 55vh;
+  height: 50vh;
 }
 
 .leftBarBox {
@@ -144,7 +144,7 @@ export default {
 
 .rightBarTitle {
   height: 30VH;
-  background-image: url(src/assets/img/AllSpiceLogoBannerV2.png);
+  background-image: url(/Users/miles/CodeWorks/Checkpoints/AllSpice/AllSpice.client/src/assets/img/AllSpiceLogoBannerV2.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
